@@ -42,7 +42,7 @@
    
     <div className="upload-info-container">
       <form action="<?= url('uploadinfo.php') ?>" method="post" enctype="multipart/form-data">
-        <a href="<?= url('./') ?>">Back</a>
+        <button><a href="<?= url('./') ?>">Back</a></button>
         <h2>Upload Information</h2>
         <label htmlFor="name">Name:</label>
             <input

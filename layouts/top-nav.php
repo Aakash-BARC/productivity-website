@@ -4,14 +4,14 @@ session_start();
 <nav class="navbar">
         <div class="logo">Productivity</div>
         <div class="submit-container">
-          <div class='large-button'><a href="<?= url('uploadinfo.php') ?>">Post</a></div>
+        <a href="<?= url('uploadinfo.php') ?>"><div class='large-button'>Post</div></a>
           <?php 
                 if (!isset($_SESSION['user'])) {
                     ?>
-          <div class="large-button"><a href="<?= url('auth/login.php') ?>">Log In</a></div>
+          <a href="<?= url('auth/login.php') ?>"><div class="large-button">Log In</div></a>
             <?php
                 } else { ?>
-          <div class="large-button"><a  href="<?= url('auth/logout.php') ?>">Log Out</a></div>
+          <a  href="<?= url('auth/logout.php') ?>"><div class="large-button">Log Out</div></a>
           <?php } ?>
         </div>
         <div class="search-bar">

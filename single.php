@@ -21,16 +21,15 @@
         if ($post !== false) {
             ?>
 
-        <a href="<?= url('./') ?>">Back</a>
+        <button><a href="<?= url('./') ?>">Back</a></button>
         <div className="container">
             <h1>Post Information</h1>
             <h2>Name: <?= $post->name ?></h2>
       <h2>Contact no: <?= $post->contact ?></h2>
       <h2>Date and Time: <?= $post->date ?></h2>
       <h2>Description: <?= $post->description ?></h2>
-      <object data="<?= asset($post->image) ?>"></object>
+      <object width='1000' height='1000'data="<?= asset($post->file) ?>"></object>
                 <?php
-                echo ($post->image);
         } else{ ?>
                     <section>post not found!</section>
                     <?php } ?>

@@ -1,35 +1,17 @@
-home-container {
-  padding: 20px;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  padding: 20px;
-  color: black;
-  border-radius: 6px;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: black;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
+body{
+  background-color: #D3D3D3;
 }
 
 .posts {
   display: flex;
   flex-direction: column;
+  margin: 10px;
   padding: 10px;
   border-radius: 6px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+  background-color: white;
 }
+
 
 .post_header{
   display: flex;
@@ -80,14 +62,8 @@ button {
   color: black;
   border-radius: 6px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2); 
-  height: 50px; 
-}
-
-
-.dropdown-icon {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
+  height: 70px; 
+  margin: 10px;
 }
 
 .line {
@@ -97,17 +73,6 @@ button {
   margin: 5px 0;
 }
 
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  opacity: 0;
-  animation: fadeIn 0.3s ease-in-out forwards;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -115,21 +80,6 @@ button {
   to {
     opacity: 1;
   }
-}
-
-.dropdown-content div {
-  padding: 12px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content div:hover {
-  background-color: #ddd;
-  cursor: pointer;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
 }
 
 .logo {
@@ -168,17 +118,18 @@ button {
 
 .submit-container {
   display: flex;
-  margin-left: auto; 
+  margin-right: auto;
 }
 
 .large-button {
   background-color: #45a049;
-  padding: 15px 21px; 
+  padding: 10px 16px; 
   font-size: 15px; 
   border-radius: 8px;
   color: white;
+  margin: 5px;
 }
 
-Link{
-  text-decoration: none;
+a:link{
+  text-decoration: none!important;
 }
