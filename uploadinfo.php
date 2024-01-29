@@ -35,15 +35,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Info</title>
+    <link rel="stylesheet" href="<?= asset('assets/css/bootstrap.min.css') ?>" media="all" type="text/css">
+    <link rel="stylesheet" href="<?= asset('assets/css/style.css') ?>" media="all" type="text/css">
     <link rel="stylesheet" href="<?= asset('assets/css/UploadInfo.css') ?>" media="all" type="text/css">    
 </head>
 <body>
-    <style> <?php include 'assets/css/Home.css'; ?> </style>
-   
-    <div className="upload-info-container">
+    <style> <?php include 'assets/css/UploadInfo.css'; ?> </style>
+    <div class="back">
+            <a href="<?= url('./') ?>">
+                <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 256 512">
+                    <path fill="#161c1f" d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/>
+                </svg>
+            </a>
+    </div>
+    <div class="container">
       <form action="<?= url('uploadinfo.php') ?>" method="post" enctype="multipart/form-data">
-        <button><a href="<?= url('./') ?>">Back</a></button>
-        <h2>Upload Information</h2>
+        <img src='assets\images\upload.PNG' alt='upload' class='logo'/>
         <label htmlFor="name">Name:</label>
             <input
             type="text"
@@ -79,9 +86,12 @@
             name="image"
             />
 
-            <input type="submit" value="submit" /> 
+            <button type="submit" class="log" value="submit">Submit</button>
       </form>
       <p><?php if ($error !== '') echo $error; ?></p>
     </div>
+
+<script src="<?= asset('assets/js/jquery.min.js') ?>"></script>
+<script src="<?= asset('assets/js/bootstrap.min.js') ?>"></script>
 </body>
 </html>

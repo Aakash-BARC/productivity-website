@@ -1,6 +1,37 @@
 <?php
      require_once 'functions/helpers.php';
      require_once 'functions/pdo_connection.php';
+
+     if(isset($_POST['option']) && isset($_POST['search']) && $_POST['search'] !== '') 
+         {  $option = $_POST['option'];
+          if(($_POST['option']) == 'name')
+            {
+              $query = "SELECT * FROM `posts` WHERE INSTR(name,?) <> 0";
+              $statement = $pdo->prepare($query);
+              $statement->execute([$_POST['search']]);
+              $posts = $statement->fetchAll();
+            } elseif (($_POST['option']) == 'contact') {
+              $query = "SELECT * FROM `posts` WHERE INSTR(contact,?) <> 0";
+              $statement = $pdo->prepare($query);
+              $statement->execute([$_POST['search']]);
+              $posts = $statement->fetchAll();
+            } elseif (($_POST['option']) == 'date') {
+              $query = "SELECT * FROM `posts` WHERE INSTR(date,?) <> 0";
+              $statement = $pdo->prepare($query);
+              $statement->execute([$_POST['search']]);
+              $posts = $statement->fetchAll();
+            } else {
+              $query = "SELECT * FROM `posts` WHERE INSTR(description,?) <> 0";
+              $statement = $pdo->prepare($query);
+              $statement->execute([$_POST['search']]);
+              $posts = $statement->fetchAll();
+            }
+         }else{
+          $query = "SELECT * FROM posts";
+          $statement = $pdo->prepare($query);
+          $statement->execute();
+          $posts = $statement->fetchAll();
+        }
      ?>
 
 <!DOCTYPE html>
@@ -14,34 +45,26 @@
     <link rel="stylesheet" href="<?= asset('assets/css/Home.css') ?>" media="all" type="text/css">    
 </head>
 <body>
-
-        <style> <?php include 'assets/css/Home.css'; ?> </style>
         <?php require_once "layouts/top-nav.php"?>
-        <?php
-        if(!isset($_SESSION['user'])){
-            ?>
-            <div class="welcome-message">
-            <p>Please Sign In or Register</p>  
-            </div>
-            <?php
-        } else { ?>
-            <div class="welcome-message">
-            <p>welcome, <?php echo $_SESSION['name']?></p>  
-            </div>
-    <?php    } ?>
-    <?php
-                        $query = "SELECT * FROM posts";
-                         $statement = $pdo->prepare($query);
-                         $statement->execute();
-                         $posts = $statement->fetchAll();
-                         foreach ($posts as $post) { ?>
+        <style> <?php include 'assets/css/Home.css'; ?> </style>
+    <?php foreach ($posts as $post) { ?>
                          
-    <div class="content">
+      <a href="<?= url('single.php?post_id=') . $post->id ?>">
         <div class="posts">
             <div class="post">
               <div class="post_header">
-                <h1><a href="<?= url('single.php?post_id=') . $post->id ?>"><?= $post->name ?></a></h1>
-                <h3 class='post_date'><?= $post->date ?></h3>
+                <h1>
+                <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 448 512">
+                  <path fill="#161c1f" d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/>
+                </svg>
+                  &nbsp;:&nbsp;<?= $post->name ?>
+                </h1>
+                <h3 class='post_date'>
+                <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 448 512">
+                  <path fill="#161c1f" d="M96 32V64H48C21.5 64 0 85.5 0 112v48H448V112c0-26.5-21.5-48-48-48H352V32c0-17.7-14.3-32-32-32s-32 14.3-32 32V64H160V32c0-17.7-14.3-32-32-32S96 14.3 96 32zM448 192H0V464c0 26.5 21.5 48 48 48H400c26.5 0 48-21.5 48-48V192z"/>
+                </svg>
+                &nbsp;:&nbsp;<?= $post->date ?>
+                </h3>
                 </div>
                 <div class="post_contact">
                 <h2>
@@ -50,11 +73,12 @@
                   &nbsp;:&nbsp;<?= $post->contact ?>
                   </h2>
                 </div>
-              <p><?= $post->description ?></p>
+                <br>
+              <h4><?= $post->description ?></h4>
             </div>
         </div>
       </div>
-    </div>
+      </a>
 <?php } ?>
 
 
