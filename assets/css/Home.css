@@ -15,7 +15,8 @@ body{
 .posts {
   display: flex;
   flex-direction: column;
-  margin: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
   margin-top: 25px;
   padding: 20px;
   border-radius: 30px;
@@ -234,16 +235,6 @@ select{
   cursor: pointer;
   font-size: 20px;
 }
-
-.large-button {
-  background-color: #45a049;
-  padding: 10px 16px; 
-  font-size: 15px; 
-  border-radius: 8px;
-  color: white;
-  margin: 5px;
-}
-
 a:link{
   color: #393E46;
   text-decoration: none!important;
