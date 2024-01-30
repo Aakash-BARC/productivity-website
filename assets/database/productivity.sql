@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2024 at 08:06 AM
+-- Generation Time: Jan 30, 2024 at 07:09 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,47 @@ SET time_zone = "+00:00";
 --
 -- Database: `productivity`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detail`
+--
+
+CREATE TABLE `detail` (
+  `id` int(11) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `pid` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `detail`
+--
+
+INSERT INTO `detail` (`id`, `category`, `date`, `description`, `pid`) VALUES
+(5, '1', '2024-01-29T18:36', 'test 1', 23),
+(6, '1', '2024-01-29T18:36', 'test 1', 23),
+(7, '1', '2024-01-29T18:36', 'test 1', 23),
+(8, '1', '2024-01-29T18:36', 'test 1', 23),
+(9, '1', '2024-01-29T18:36', 'test 1', 23),
+(10, '1', '2024-01-29T18:36', 'test 1', 23),
+(11, '1', '2024-01-29T18:36', 'test 1', 23),
+(12, '1', '2024-01-29T18:36', 'test 1', 23),
+(13, '1', '2024-01-29T18:36', 'test 1', 23),
+(14, '1', '2024-01-29T18:36', 'test 1', 23),
+(15, '1', '2024-01-29T18:36', 'test 1', 23),
+(16, '1', '2024-01-29T19:31', 'test 1', 23),
+(17, '1', '2024-01-29T19:31', 'test 1', 23),
+(18, '1', '2024-01-29T19:31', 'test 1', 23),
+(19, '1', '2024-01-29T19:31', 'test 1', 23),
+(20, '1', '2024-01-29T19:31', 'test 1', 23),
+(21, '1', '2024-01-29T19:31', 'test 1', 23),
+(22, '1', '2024-01-29T19:31', 'test 1', 23),
+(31, '1', '2024-01-30T09:38', 'eawfafa', 19),
+(32, '2', '2024-01-30T09:39', 'gfayugfawuf', 19),
+(38, '1', '2024-01-30T11:33', 'nknknknknkknknknknknknknknknkn', 24);
 
 -- --------------------------------------------------------
 
@@ -42,8 +83,6 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `name`, `contact`, `date`, `description`, `file`, `uid`) VALUES
-(2, 'Contractor 2', '+91 0123456789', '01/02/2024 05:37 PM', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque gravida eget sem vel interdum. Donec accumsan ex sollicitudin sapien gravida pharetra. Phasellus congue pulvinar justo at auctor. Integer ut est ut magna vehicula lobortis in ac massa. ', '', 5),
-(3, 'test', '+91 0123456784', '04/02/2024 05:37 PM', 'etstt', '', 5),
 (4, 'test2', '+91 0123456784', '18/02/2024 05:37 PM', 'conversation 1', '', 5),
 (5, 'test', '+91 0123456784', '2024-01-18T14:42', 'conversation 2', '', 5),
 (6, 'test 5 ', '+91 0123456784', '2024-01-18T13:25', 'test 5', '', 5),
@@ -58,8 +97,8 @@ INSERT INTO `posts` (`id`, `name`, `contact`, `date`, `description`, `file`, `ui
 (17, 'test13', '+91 0123456780', '2024-01-17T21:01', 'test 13', '/assets/images/posts/2024_01_21_17_06_55.pdf', 14),
 (18, 'test13', '+91 0123456780', '2024-01-17T21:01', 'test 13', '/assets/images/posts/2024_01_21_17_07_00.pdf', 14),
 (19, 'test13', '+91 0123456784', '2024-01-09T21:37', 'test 13', '/assets/images/posts/2024_01_21_17_07_30.pdf', 14),
-(20, 'test14', '+91 88794561231', '2024-01-03T21:38', 'test 13', '/assets/images/posts/2024_01_21_17_09_02.pdf', 14),
-(21, 'test14', '+91 88794561231', '2024-01-03T21:38', 'test 13', '/assets/images/posts/2024_01_21_17_37_36.pdf', 14);
+(23, 'test14', '+91 0123456784', '2024-01-08T13:52', 'test 15', '/assets/images/posts/2024_01_27_09_22_39.pdf', 14),
+(24, 'aakash-test', '+91 8879369441', '2024-01-30T10:30', 'testingggg', '/assets/images/posts/2024_01_30_06_01_00.pdf', 15);
 
 -- --------------------------------------------------------
 
@@ -92,11 +131,18 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
 (11, 'ABC', 'abc@gmail.com', 'abc'),
 (12, 'pqr', 'pqr@gmail.com', 'pqr'),
 (13, 'test12', 'test12@gmail.com', '$2y$10$5V6U/37ESJCwxv3Lrr/fGub/2l4BD9ULUuqcZh3MKGAnvyejBj9by'),
-(14, 'test13', 'test13@gmail.com', '$2y$10$9BXOyb3nXf7Al0L9MJHLOuDi/XzY94.xc0a8hfC6ndZckUS68Lnm.');
+(14, 'test13', 'test13@gmail.com', '$2y$10$9BXOyb3nXf7Al0L9MJHLOuDi/XzY94.xc0a8hfC6ndZckUS68Lnm.'),
+(15, 'aakash', 'aakash@gmail.com', '$2y$10$11QMEAIibHUpIZXkRaebA.F2pVud4h7KnwZ4OwbUG6O32BYkW/sT2');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `detail`
+--
+ALTER TABLE `detail`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `posts`
@@ -116,16 +162,22 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `detail`
+--
+ALTER TABLE `detail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
