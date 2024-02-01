@@ -27,7 +27,7 @@
               $posts = $statement->fetchAll();
             }
          }else{
-          $query = "SELECT * FROM posts";
+          $query = "SELECT * FROM posts ORDER BY id DESC";
           $statement = $pdo->prepare($query);
           $statement->execute();
           $posts = $statement->fetchAll();
