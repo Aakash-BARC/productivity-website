@@ -50,49 +50,50 @@
                 </div>
             </a>
     </nav>
-    <div class="container">
-      <form action="<?= url('uploadinfo.php') ?>" method="post" enctype="multipart/form-data">
-        <img src='assets\images\upload.PNG' alt='upload' class='logo'/>
-        <label htmlFor="name">Name:</label>
-            <input
-            type="text"
-            id="name"
-            name="name"
-            />
+    <div class="main-container">
+        <div class="container">
+        <form action="<?= url('uploadinfo.php') ?>" method="post" enctype="multipart/form-data">
+            <img src='assets\images\upload.PNG' alt='upload' class='logo'/>
+            <label htmlFor="name">Name:</label>
+                <input
+                type="text"
+                id="name"
+                name="name"
+                />
 
-        <label htmlFor="contact">Contact No:</label>
-            <input
-            type="tel"
-            id="contact"
-            name="contact"
-            />
+            <label htmlFor="contact">Contact No:</label>
+                <input
+                type="tel"
+                id="contact"
+                name="contact"
+                />
 
-        <label htmlFor="date">Date and Time:</label>
-            <input
-            type="datetime-local"
-            id="date"
-            name="date"
-            />
+            <label htmlFor="date">Date and Time:</label>
+                <input
+                type="datetime-local"
+                id="date"
+                name="date"
+                />
 
-        <label htmlFor="description">Description:</label>
-            <textarea
-            id="description"
-            name="description"
-            value=description
-            ></textarea>
+            <label htmlFor="description">Description:</label>
+                <textarea
+                id="description"
+                name="description"
+                value=description
+                ></textarea>
 
-        <label htmlFor="file">Upload File:</label>
-            <input
-            type="file"
-            id="image"
-            name="image"
-            />
+            <label htmlFor="file">Upload File:</label>
+                <input
+                type="file"
+                id="image"
+                name="image"
+                />
 
-            <button type="submit" class="log" value="submit">Submit</button>
-      </form>
-      <p><?php if ($error !== '') echo $error; ?></p>
+                <button type="submit" class="log" value="submit">Submit</button>
+        </form>
+        <p><?php if ($error !== '') echo $error; ?></p>
+        </div>
     </div>
-
 <script src="<?= asset('assets/js/jquery.min.js') ?>"></script>
 <script src="<?= asset('assets/js/bootstrap.min.js') ?>"></script>
 </body>
