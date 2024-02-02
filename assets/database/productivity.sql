@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 30, 2024 at 07:09 AM
+-- Generation Time: Feb 02, 2024 at 05:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,25 +42,9 @@ CREATE TABLE `detail` (
 INSERT INTO `detail` (`id`, `category`, `date`, `description`, `pid`) VALUES
 (5, '1', '2024-01-29T18:36', 'test 1', 23),
 (6, '1', '2024-01-29T18:36', 'test 1', 23),
-(7, '1', '2024-01-29T18:36', 'test 1', 23),
-(8, '1', '2024-01-29T18:36', 'test 1', 23),
-(9, '1', '2024-01-29T18:36', 'test 1', 23),
-(10, '1', '2024-01-29T18:36', 'test 1', 23),
-(11, '1', '2024-01-29T18:36', 'test 1', 23),
-(12, '1', '2024-01-29T18:36', 'test 1', 23),
-(13, '1', '2024-01-29T18:36', 'test 1', 23),
-(14, '1', '2024-01-29T18:36', 'test 1', 23),
-(15, '1', '2024-01-29T18:36', 'test 1', 23),
-(16, '1', '2024-01-29T19:31', 'test 1', 23),
-(17, '1', '2024-01-29T19:31', 'test 1', 23),
-(18, '1', '2024-01-29T19:31', 'test 1', 23),
-(19, '1', '2024-01-29T19:31', 'test 1', 23),
-(20, '1', '2024-01-29T19:31', 'test 1', 23),
-(21, '1', '2024-01-29T19:31', 'test 1', 23),
-(22, '1', '2024-01-29T19:31', 'test 1', 23),
 (31, '1', '2024-01-30T09:38', 'eawfafa', 19),
 (32, '2', '2024-01-30T09:39', 'gfayugfawuf', 19),
-(38, '1', '2024-01-30T11:33', 'nknknknknkknknknknknknknknknkn', 24);
+(42, '1', '2024-02-01T18:02', 'TESTING', 24);
 
 -- --------------------------------------------------------
 
@@ -92,12 +76,6 @@ INSERT INTO `posts` (`id`, `name`, `contact`, `date`, `description`, `file`, `ui
 (10, 'test 9', '+91 8879369441', '2024-01-08T18:53', 'test 9', '', 5),
 (11, 'test 10', '+91 0123456780', '2024-01-07T19:01', 'test 10', '', 5),
 (12, 'test 11', '+91 8879369441', '2024-01-16T18:03', 'test 11', '1705566826802Coding Assignment.pdf', 5),
-(13, 'test12', '+91 0123456784', '2024-01-23T22:19', 'test 12', '1705582181317CS TT Even Sem 8th Jan 2024.pdf', 5),
-(16, 'test13', '+91 0123456784', '2024-01-03T20:53', 'test 13', '/assets/images/posts/2024_01_21_16_23_10.pdf', 14),
-(17, 'test13', '+91 0123456780', '2024-01-17T21:01', 'test 13', '/assets/images/posts/2024_01_21_17_06_55.pdf', 14),
-(18, 'test13', '+91 0123456780', '2024-01-17T21:01', 'test 13', '/assets/images/posts/2024_01_21_17_07_00.pdf', 14),
-(19, 'test13', '+91 0123456784', '2024-01-09T21:37', 'test 13', '/assets/images/posts/2024_01_21_17_07_30.pdf', 14),
-(23, 'test14', '+91 0123456784', '2024-01-08T13:52', 'test 15', '/assets/images/posts/2024_01_27_09_22_39.pdf', 14),
 (24, 'aakash-test', '+91 8879369441', '2024-01-30T10:30', 'testingggg', '/assets/images/posts/2024_01_30_06_01_00.pdf', 15);
 
 -- --------------------------------------------------------
@@ -165,7 +143,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `detail`
 --
 ALTER TABLE `detail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `posts`
