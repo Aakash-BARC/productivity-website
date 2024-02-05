@@ -5,7 +5,7 @@
 
 
      $error = '';
-     if(isset($_POST['name']) && $_POST['name'] !== '' && isset($_POST['contact']) && $_POST['contact'] !== '' && isset($_POST['date']) && $_POST['date'] !== '' && isset($_POST['description']) && $_POST['description'] !== '' && isset($_FILES['image']) && $_FILES['image']['name'] !== '') 
+     if(isset($_POST['name']) && $_POST['name'] !== '' && isset($_POST['contact']) && $_POST['contact'] !== '' && isset($_POST['date']) && $_POST['date'] !== '' && isset($_POST['description']) && $_POST['description'] !== '') 
      {    
 
           $allowedMimes = ['doc', 'docx','pdf'];
@@ -15,10 +15,9 @@
             $error = 'There is an issue';
           }
 
-          $basePath = 'D:\xamp\htdocs\productivity';
-          $image = '/assets/images/posts/' . date('Y_m_d_H_i_s') . '.' . $imageMime;
+          $basePath = './';
+          $image = 'uploads/' . date('Y_m_d_H_i_s') . '.' . $imageMime;
           $image_upload = move_uploaded_file($_FILES['image']['tmp_name'], $basePath . $image);
-          if($image_upload !== false)
           {
           $query = "INSERT INTO posts SET name = ?, contact = ?, date = ?, description = ?, file = ?, uid = ?;";
           $statement = $pdo->prepare($query);

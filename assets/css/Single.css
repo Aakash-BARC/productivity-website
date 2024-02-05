@@ -10,6 +10,19 @@ body{
   src: url(DMSans-VariableFont_opsz\,wght.ttf);
 }
 
+p{
+  margin-bottom: 0;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#919191;
+  height: 1px;
+}
+
 .back{
   margin: 15px auto auto 15px;
   border-radius: 50%;
@@ -271,4 +284,3 @@ a:active{
   color: #393E46;
   text-decoration: none!important;
 }
-  

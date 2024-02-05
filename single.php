@@ -39,7 +39,9 @@
             <div class="logo">
                 <img src="assets\images\single.PNG" alt="info">
             </div>
-            <a href="<?= url('deletesingle.php?post_id=') . $post->id ?>">
+            <?php 
+            if($_SESSION['name'] == $post->username) { ?>
+                <a href="<?= url('deletesingle.php?post_id=') . $post->id ?>">
             <button class="delete">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,6 +82,7 @@
             </svg>
             </button>
         </a>
+         <?php   } ?>
         </nav>
         <div class="main-container">
             <div id="info">
@@ -89,9 +92,12 @@
                     <h2>Date and Time: <?= $post->date ?></h2>
                     <h2>Description: <?= $post->description ?></h2>
                     <h3>Post was made by <?= $post->username ?></h3>
+                    <h1></h1>
                     <div class="pdf-button">
-                        <button id="showpdf" class="log">Show Pdf</button>
-                        <button id="hidepdf" class="log" style="display:none;">Hide Pdf</button>
+                        <?php if (str_contains($post->file, 'pdf')) { ?>
+                            <button id="showpdf" class="log">Show Pdf</button>
+                             <button id="hidepdf" class="log" style="display:none;">Hide Pdf</button>
+                       <?php } ?>
                         <button id="showdetail" class="log">Show Details</button>
                         <button id="hidedetail" class="log" style="display:none;">Hide Details</button>
                     </div>
@@ -173,7 +179,6 @@
                         <section>post not found!</section>
                         <?php } ?>
         </div>
-
 <script src="<?= asset('assets/js/jquery.min.js') ?>"></script>
 <script src="<?= asset('assets/js/bootstrap.min.js') ?>"></script>
 <script>
