@@ -1,7 +1,7 @@
 <?php
 
 //config
-define('BASE_URL', 'http://10.16.22.165/nrgweb/productivity/');
+define('BASE_URL', 'http://localhost/productivity/');
 
 function redirect($url) 
 {    

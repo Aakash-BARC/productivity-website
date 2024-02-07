@@ -1,5 +1,5 @@
 body{
-  background-color: #f6f6f6;
+  background-color: #8db1b3;
   font-family: DMsans;
   display: grid;
 }
@@ -38,6 +38,7 @@ body{
     justify-content: center;
     align-items: center;
     transition: 400ms;
+    background-color: #e8e8e8;
 }
 
 .back:hover	{

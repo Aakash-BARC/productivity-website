@@ -7,7 +7,6 @@ session_start();
      if(isset($_POST['email']) && $_POST['email'] !== ''
          && isset($_POST['password']) && $_POST['password'] !== '') 
          {
-
             $query = "SELECT * FROM users WHERE email = ?;";
             $statement = $pdo->prepare($query);
             $statement->execute([$_POST['email']]);
@@ -15,11 +14,19 @@ session_start();
             if($user !== false)
             {
                     if(password_verify($_POST['password'], $user->password))
-                    {
+                    {   
+                        if($user->email == "hod@email.com" && $user->username == "HOD"){
+                            $_SESSION['user'] =  $user->email;
+                            $_SESSION['id'] = $user->id;
+                            $_SESSION['name'] = $user->username;
+                            redirect('./admin.php');                            
+                        }
+                        else{
                             $_SESSION['user'] =  $user->email;
                             $_SESSION['id'] = $user->id;
                             $_SESSION['name'] = $user->username;
                             redirect('./index.php');
+                        }
                     }
                     else{
                         $error = 'password is wrong';
@@ -60,7 +67,7 @@ session_start();
     <form class="form-container" action="<?= url('auth/login.php') ?>" method="post">
     
         <div class="header">
-        <img class="logo" src='..\layouts\Capture.PNG' alt='logo'/>
+        <img class="logo" src='..\assets\images\Login.PNG' alt='logo' width="100"/>
         </div>
 
         <div class="inputs">

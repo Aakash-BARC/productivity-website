@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/Calcutta');
+$date = date('d/m/Y h:i a', time());
      require_once 'functions/helpers.php';
      require_once 'functions/pdo_connection.php';
      require_once 'functions/auth.php';
@@ -41,7 +43,11 @@
 <body>
     <style> <?php include 'assets/css/UploadInfo.css'; ?> </style>
     <nav class="navbar">
+    <?php if($_SESSION['name'] == "HOD" && $_SESSION['user'] == "hod@email.com"){ ?>
+        <a href="<?= url('./admin.php') ?>">
+    <?php   } else { ?>
         <a href="<?= url('./') ?>">
+    <?php   }    ?>
                 <div class="back">
                         <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 256 512">
                             <path fill="#161c1f" d="M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z"/>
@@ -69,7 +75,9 @@
 
             <label htmlFor="date">Date and Time:</label>
                 <input
-                type="datetime-local"
+                placeholder="<?= $date ?>"
+                value="<?= $date ?>"
+                type="input"
                 id="date"
                 name="date"
                 />

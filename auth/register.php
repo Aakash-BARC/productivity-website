@@ -54,7 +54,7 @@
     </a>
 </div>
         <div class="header">
-            <img class="logo" src='..\layouts\Capture.PNG' alt='logo'/>
+            <img class="logo" src='..\assets\images\Register.PNG' alt='logo'/>
         </div>
 
         <form class="form-container" action="<?= url('auth/register.php') ?>" method="post">

@@ -14,15 +14,16 @@
             </div>
     <?php    } ?>
         </div>
-        <form action="<?= url('index.php') ?>" method="post">
+        <form action="<?= url('admin.php') ?>" method="post">
         <div class="search-bar">
           <div class="search">
               <input type="text" name="search" class="searchTerm" placeholder="Search" />
                 <select id="option" name="option">
-                  <option value="name">Name</option>
-                  <option value="contact">Contact No.</option>
-                  <option value="date">Date Time</option>
-                  <option value="description">Description</option>
+                    <option value="user">Username</option>
+                    <option value="name">Name</option>
+                    <option value="contact">Contact No.</option>
+                    <option value="date">Date Time</option>
+                    <option value="description">Description</option>
                 </select>
                 <input type="submit" class="searchButton" value='Go'>
                 </input>
