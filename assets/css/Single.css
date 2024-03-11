@@ -1,5 +1,5 @@
 body{
-  background-color: #f6f6f6;
+  background-color: #8db1b3;
   font-family: DMsans;
   display: flex;
   flex-direction: column;
@@ -31,6 +31,7 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #f6f6f6;
   transition: 400ms;
 }
 
@@ -46,6 +47,9 @@ hr {
 .navbar{
   display: flex;
   margin-bottom: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  background-color: #f6f6f6;
 }
 
 .logo{
@@ -105,7 +109,8 @@ hr {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
   height: auto;
   width: auto;
-  border-radius: 30px
+  border-radius: 30px;
+  background-color: #f6f6f6;
 }
 
 .pdf-button{
@@ -147,6 +152,7 @@ hr {
   margin-right: 50px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
   border-radius: 30px;
+  background-color: #f6f6f6;
   width: auto;
   height: auto;
 }

@@ -44,7 +44,7 @@
                 <img src="assets\images\single.PNG" alt="info">
             </div>
             <?php 
-            if($_SESSION['name'] == $post->username) { ?>
+            if($_SESSION['name'] == $post->username || $_SESSION['name'] == "HOD") { ?>
                 <a href="<?= url('deletesingle.php?post_id=') . $post->id ?>">
             <button class="delete">
             <svg
